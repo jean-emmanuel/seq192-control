@@ -266,7 +266,7 @@
             "asYouType": false,
             "numeric": false,
             "validation": "",
-            "value": "OSC{/seq192/bpm, 120}",
+            "value": "#{\nparseFloat(OSC{/seq192/bpm, 120})\n}",
             "default": "",
             "linkId": "",
             "address": "/bom",
