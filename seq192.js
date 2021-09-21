@@ -166,19 +166,19 @@ class Seq192 {
 
     }
 
+    send() {
+
+        send(SEQ192_HOST, SEQ192_PORT, ...arguments)
+
+    }
+
 }
 
 var seq192 = new Seq192(SEQ192_ROWS, SEQ192_COLS)
 
-function toSeq192() {
-
-    send('127.0.0.1', SEQ192_PORT, ...arguments)
-
-}
-
 setInterval(()=>{
 
-    toSeq192('/status/extended')
+    seq192.send('/status/extended')
 
 }, 1000 / REFRESH_RATE )
 
@@ -198,11 +198,6 @@ app.on('sessionOpened', (data, client)=>{
 
 
 module.exports = {
-
-    init: ()=>{
-
-
-    },
 
     oscInFilter: (data)=>{
 
@@ -244,7 +239,7 @@ module.exports = {
 
                 setTimeout(()=>{
 
-                    toSeq192('/status/extended')
+                    seq192.send('/status/extended')
 
                 })
 
