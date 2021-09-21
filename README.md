@@ -15,3 +15,5 @@ open-stage-control -l path/to/seq192.json -c path/to/seq192.js
 **Config**
 
 Edit seq192.js
+
+Seq192 must run with --osc-port to the same value as `SEQ192_PORT` in seq192.js.

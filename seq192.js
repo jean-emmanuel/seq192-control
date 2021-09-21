@@ -1,15 +1,19 @@
-
+// Seq192 constants
 SEQ192_COLS = 14
 SEQ192_ROWS = 13
 
+// Seq192 config
+SEQ192_PORT = 10000
+SEQ192_HOST = '127.0.0.1'
+
+// UI config
 DISPLAY_COLS = 8
 DISPLAY_ROWS = 8
 ENABLE_PROGRESS_BARS = 1 // laggy with big screensets
+REFRESH_RATE = 20
 
-var seq192port = 10000,
-    seq192host = '127.0.0.1',
-    refreshRate = 20,
-    lastStatus = ''
+// Internals
+LAST_STATUS = ''
 
 class Sequence {
 
@@ -168,7 +172,7 @@ var seq192 = new Seq192(SEQ192_ROWS, SEQ192_COLS)
 
 function toSeq192() {
 
-    send('127.0.0.1', seq192port, ...arguments)
+    send('127.0.0.1', SEQ192_PORT, ...arguments)
 
 }
 
@@ -176,12 +180,12 @@ setInterval(()=>{
 
     toSeq192('/status/extended')
 
-}, 1000 / refreshRate )
+}, 1000 / REFRESH_RATE )
 
 app.on('sessionOpened', (data, client)=>{
 
     // force recalc on reload
-    lastStatus = ''
+    LAST_STATUS = ''
     seq192.playing = -1
     seq192.sequences.forEach(x=>x.active=0)
     receive('/seqMode', seq192.seqMode)
@@ -204,11 +208,11 @@ module.exports = {
 
         var {address, args, host, port} = data
 
-        if (port === seq192port) {
+        if (port === SEQ192_PORT) {
 
             var newStatus = args[0].value
-            if (newStatus != lastStatus) seq192.update(JSON.parse(newStatus))
-            lastStatus = newStatus
+            if (newStatus != LAST_STATUS) seq192.update(JSON.parse(newStatus))
+            LAST_STATUS = newStatus
 
             return
 
@@ -235,8 +239,8 @@ module.exports = {
 
                 }
 
-                host = seq192host
-                port = seq192port
+                host = SEQ192_HOST
+                port = SEQ192_PORT
 
                 setTimeout(()=>{
 
