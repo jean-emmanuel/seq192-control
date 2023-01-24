@@ -1,28 +1,33 @@
 {
-  "version": "1.9.14",
+  "version": "1.20.0",
   "createdWith": "Open Stage Control",
-  "type": "fragment",
+  "type": "session",
   "content": {
-    "type": "tab",
-    "id": "seq192_tab",
+    "type": "root",
+    "tabs": [],
+    "lock": false,
+    "id": "root",
     "visible": true,
     "interaction": true,
     "comments": "",
+    "width": "auto",
+    "height": "auto",
     "colorText": "auto",
     "colorWidget": "white",
-    "colorFill": "auto",
-    "padding": 2,
+    "alphaFillOn": "auto",
+    "borderRadius": "auto",
+    "padding": "auto",
     "html": "",
     "css": ".hold:before {\n content: \"HOLD\";\n margin: 2rem;\n opacity: 0.35\n}",
     "colorBg": "auto",
     "layout": "grid",
     "justify": "start",
-    "gridTemplate": "\"a a\" 50px \n\"c b\" \n\"d d\" 50px / calc(100% - 100px)",
+    "gridTemplate": "\"a a\" 50px \n\"c b\" \n\"d d\" 50px / calc(100% - 110px)",
     "contain": true,
     "scroll": true,
-    "innerPadding": false,
+    "innerPadding": true,
     "verticalTabs": false,
-    "label": "SEQ192",
+    "hideMenu": true,
     "variables": "@{parent.variables}",
     "traversing": false,
     "value": "",
@@ -35,7 +40,8 @@
     "target": "",
     "ignoreDefaults": false,
     "bypass": false,
-    "script": "",
+    "onCreate": "",
+    "onValue": "",
     "widgets": [
       {
         "type": "variable",
@@ -51,7 +57,9 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": ""
+        "onValue": "",
+        "lock": false,
+        "onCreate": ""
       },
       {
         "type": "variable",
@@ -67,7 +75,9 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": ""
+        "onValue": "",
+        "lock": false,
+        "onCreate": ""
       },
       {
         "type": "panel",
@@ -111,7 +121,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "button",
@@ -153,7 +162,11 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -195,7 +208,11 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -237,7 +254,11 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "input",
@@ -251,7 +272,7 @@
             "height": "auto",
             "expand": "false",
             "colorText": "auto",
-            "colorWidget": "auto",
+            "colorWidget": "rgba(109,181,253,1)",
             "colorStroke": "auto",
             "colorFill": "auto",
             "alphaStroke": "auto",
@@ -276,7 +297,11 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "maxLength": "",
+            "onCreate": ""
           },
           {
             "type": "text",
@@ -308,8 +333,11 @@
             "preArgs": "",
             "decimals": 2,
             "target": "",
-            "script": "",
-            "align": "center"
+            "align": "center",
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "input",
@@ -343,12 +371,16 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "align": "center",
             "unit": "",
             "asYouType": false,
             "numeric": false,
-            "validation": ""
+            "validation": "",
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "maxLength": "",
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -371,7 +403,7 @@
             "lineWidth": 0,
             "padding": "auto",
             "html": "",
-            "css": "font-size: 150%",
+            "css": "font-size: 150%;\nmargin-left:-4rem;",
             "colorTextOn": "auto",
             "label": "^angle-left",
             "vertical": false,
@@ -390,7 +422,11 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "set('seq192_ss', Math.max(0, get('seq192_ss') + value))"
+            "onValue": "set('seq192_ss', Math.max(0, get('seq192_ss') + value))",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -413,7 +449,7 @@
             "lineWidth": 0,
             "padding": "auto",
             "html": "",
-            "css": "font-size: 150%",
+            "css": "font-size: 150%;\nmargin-left:-4rem;",
             "colorTextOn": "auto",
             "label": "^angle-right",
             "vertical": false,
@@ -432,10 +468,55 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "set('seq192_ss', Math.min(31, get('seq192_ss') + value))"
+            "onValue": "set('seq192_ss', Math.min(31, get('seq192_ss') + value))",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
+          },
+          {
+            "type": "image",
+            "top": "auto",
+            "left": "auto",
+            "lock": false,
+            "id": "seq192_logo",
+            "visible": true,
+            "comments": "",
+            "width": 109,
+            "height": "auto",
+            "expand": "false",
+            "colorText": "auto",
+            "colorWidget": "auto",
+            "colorStroke": "auto",
+            "colorFill": "auto",
+            "alphaStroke": "auto",
+            "alphaFillOff": "auto",
+            "alphaFillOn": "auto",
+            "lineWidth": 0,
+            "borderRadius": "auto",
+            "padding": "auto",
+            "html": "",
+            "css": ".frame {\n  image-rendering: pixelated;\nbackground-size: 100px auto!important;\n}",
+            "value": "seq192.png",
+            "default": "",
+            "linkId": "",
+            "address": "auto",
+            "preArgs": "",
+            "target": "",
+            "onCreate": "",
+            "onValue": "",
+            "interaction": true,
+            "size": "contain",
+            "position": "center",
+            "repeat": "no-repeat",
+            "cache": true
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "borderRadius": "auto",
+        "onCreate": ""
       },
       {
         "type": "panel",
@@ -479,7 +560,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "panel",
@@ -511,7 +591,6 @@
             "lineWidth": 0,
             "padding": 2,
             "default": "",
-            "script": "",
             "ignoreDefaults": false,
             "layout": "vertical",
             "gridTemplate": "",
@@ -545,7 +624,6 @@
                 "alphaFillOn": "auto",
                 "lineWidth": 1,
                 "padding": 1,
-                "script": "",
                 "typeTags": "",
                 "ignoreDefaults": false,
                 "html": "",
@@ -573,7 +651,11 @@
                   "alphaFillOff": 0.5,
                   "preArgs": "#{$}",
                   "colorText": "var(--color-text-on)"
-                }
+                },
+                "onValue": "",
+                "lock": false,
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "matrix",
@@ -603,7 +685,6 @@
                 "alphaFillOn": "auto",
                 "lineWidth": 0,
                 "padding": 1,
-                "script": "",
                 "typeTags": "",
                 "ignoreDefaults": false,
                 "html": "",
@@ -621,7 +702,11 @@
                 "quantity": "JS{\nvar COLS = OSC{/cols},\n    ROWS = OSC{/rows}\nreturn COLS * ROWS\n}",
                 "props": "JS{\nvar COLS = OSC{/cols},\n    ROWS = OSC{/rows}\n\nvar props = {}\nvar col = $ % COLS\nvar row = parseInt(Math.floor($ / COLS))\n\nprops.id = `seq192/${col}/${row}`\nprops.label = false\nprops.preArgs = [col, row]\nprops.lineWidth = 0\nprops.address = '/sequence'\nprops.typeTags = 'i'\nprops.on = null\nprops.html = `\n<div class=\"time\">#_{(VAR_{data}||{}).time}</div>\n<div class=\"name\">#_{(VAR_{data}||{}).name}</div>\n`\nprops.css = `\n#_{(VAR_{data}||{}).queued ? \"class: queued;\" : \"\"}\n#_{(VAR_{data}||{}).recording ? \"class: recording;\" : \"\"}\n#_{(VAR_{data}||{}).on ? \"class: playing;\" : \"\"}\n#_{(VAR_{data}||{}).active ? \"\" : \"class: hidden;\"}\n`\nif (@{show_progress}) {\n props.html += `<div class=\"progress\"></div>`\n props.css += `--progress: #_{(VAR_{data}||{}).active ? (@_{seq192_tick} % (VAR_{data}||{}).ticks / (VAR_{data}||{}).ticks).toFixed(2) : 0};`\n}\n\nprops.mode = 'tap'\n\n\nreturn props\n\n}",
                 "widgets": [],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "borderRadius": "auto",
+                "onCreate": ""
               }
             ],
             "variables": "@{parent.variables}",
@@ -632,10 +717,18 @@
             "innerPadding": false,
             "verticalTabs": false,
             "html": "",
-            "comments": ""
+            "comments": "",
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "borderRadius": "auto",
+        "onCreate": ""
       },
       {
         "type": "panel",
@@ -679,7 +772,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "switch",
@@ -713,7 +805,6 @@
             "target": "seq192:cmd",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "layout": "vertical",
             "gridTemplate": "",
             "values": [
@@ -723,7 +814,11 @@
             ],
             "colorTextOn": "auto",
             "wrap": false,
-            "mode": "tap"
+            "mode": "tap",
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "text",
@@ -756,7 +851,10 @@
             "preArgs": "",
             "decimals": 2,
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "switch",
@@ -786,7 +884,6 @@
             "preArgs": "",
             "decimals": 2,
             "target": "seq192:cmd",
-            "script": "",
             "interaction": true,
             "layout": "vertical",
             "gridTemplate": "",
@@ -801,7 +898,11 @@
             "bypass": false,
             "colorTextOn": "auto",
             "wrap": false,
-            "mode": "tap"
+            "mode": "tap",
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -843,7 +944,11 @@
             "target": "seq192:cmd",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "if (value == 1) {\n send('/seqMode', 'record')\n} else {\n send('/seqMode', get('seq192_seqmode'))\n}"
+            "onValue": "if (value == 1) {\n send('/seqMode', 'record')\n} else {\n send('/seqMode', get('seq192_seqmode'))\n}",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -885,7 +990,11 @@
             "target": "seq192:cmd",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "if (value == 1) {\n send('/seqMode', 'clear')\n} else {\n send('/seqMode', get('seq192_seqmode'))\n}"
+            "onValue": "if (value == 1) {\n send('/seqMode', 'clear')\n} else {\n send('/seqMode', get('seq192_seqmode'))\n}",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "text",
@@ -918,7 +1027,10 @@
             "preArgs": "",
             "decimals": 2,
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -960,10 +1072,18 @@
             "target": "seq192:osc",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "borderRadius": "auto",
+        "onCreate": ""
       },
       {
         "type": "fader",
@@ -979,7 +1099,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "top": 20,
         "left": 60,
         "visible": true,
@@ -1017,9 +1136,13 @@
         "logScale": false,
         "sensitivity": 1,
         "steps": "",
-        "origin": "auto"
+        "origin": "auto",
+        "onValue": "",
+        "lock": false,
+        "borderRadius": "auto",
+        "onCreate": "",
+        "onTouch": ""
       }
-    ],
-    "tabs": []
+    ]
   }
 }
